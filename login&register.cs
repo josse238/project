@@ -270,5 +270,10 @@ namespace project
         {
 
         }
+
+        private void SignUpgroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
