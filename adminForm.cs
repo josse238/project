@@ -379,7 +379,11 @@ namespace project
             // Reload data ke DataGridView
             loadData();
         }
-        
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCrystal fc = new FormCrystal();
+            fc.Show();
+        }
     }
 }
