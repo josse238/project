@@ -27,8 +27,9 @@ namespace project
             comboBoxRole_SignUp.Items.Add("customer");
             comboBoxRole_SignUp.Items.Add("pegawai");
             comboBoxRole_SignUp.Items.Add("supplier");
-        }
 
+        }
+        public static int LoggedInUserId;
         private void SingnUp_button_Click(object sender, EventArgs e)
         {
             SignUpgroupBox2.Visible=true;
@@ -130,87 +131,89 @@ namespace project
             radioButton_Male_SignUp.Checked = false;
         }
 
+        
         private void Sign_In_button_Click(object sender, EventArgs e)
         {
-            // Ambil data dari input
             string namaLengkap = Name_SignIntextBox.Text;
             string password = Password_SignIn_textBox.Text;
 
-            // Validasi input
             if (string.IsNullOrWhiteSpace(namaLengkap) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Nama dan Password harus diisi!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Koneksi ke database
             string connectionString = "server=localhost;database=pad2024;uid=root;pwd=;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-
-                    // Query untuk memeriksa nama dan password
-                    string query = "SELECT ROLE FROM USER WHERE nama_lengkap = @nama_lengkap AND PASSWORD = @password";
+                    string query = "SELECT Id, ROLE FROM USER WHERE nama_lengkap = @nama_lengkap AND PASSWORD = @password";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@nama_lengkap", namaLengkap);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        object role = cmd.ExecuteScalar(); // Ambil hasil role
-
-                        if (role != null)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string userRole = role.ToString();
-
-                            // Arahkan pengguna ke halaman berdasarkan role
-                            switch (userRole)
+                            if (reader.Read())
                             {
-                                case "admin":
-                                    MessageBox.Show("Selamat datang, Admin!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Buka halaman Admin
-                                    adminForm adminForm = new adminForm();
-                                    adminForm.Show();
-                                    break;
+                                // Ambil Id_User dan Role
+                                LoggedInUserId = reader.GetInt32("Id");
+                                string userRole = reader.GetString("ROLE");
 
-                                case "kasir":
-                                    MessageBox.Show("Selamat datang, Kasir!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Buka halaman Kasir
-                                    kasirForm kasirForm = new kasirForm();
-                                    kasirForm.Show();
-                                    break;
+                                // Arahkan pengguna ke halaman sesuai role
+                                switch (userRole)
+                                {
+                                     // Arahkan pengguna ke halaman berdasarkan role
+                                    case "admin":
+                                        MessageBox.Show("Selamat datang, Admin!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        // Buka halaman Admin
+                                        adminForm adminForm = new adminForm();
+                                        adminForm.Show();
+                                        break;
 
-                                case "customer":
-                                    MessageBox.Show("Selamat datang, Customer!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Buka halaman Customer
-                                    customerForm customerForm = new customerForm();
-                                    customerForm.Show();
-                                    break;
+                                    case "kasir":
+                                        MessageBox.Show("Selamat datang, Kasir!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        // Buka halaman Kasir
+                                        kasirForm kasirForm = new kasirForm();
+                                        kasirForm.Show();
+                                        break;
 
-                                case "pegawai":
-                                    MessageBox.Show("Selamat datang, Pegawai!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Buka halaman Pegawai
-                                    pegawaiForm pegawaiForm = new pegawaiForm();
-                                    pegawaiForm.Show();
-                                    break;
+                                    case "customer":
+                                        MessageBox.Show("Selamat datang, Customer!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        // Buka halaman Customer
+                                        customerForm customerForm = new customerForm();
+                                        customerForm.Show();
+                                        break;
 
-                                case "supplier":
-                                    MessageBox.Show("Selamat datang, Supplier!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    // Buka halaman Supplier
-                                    supplierForm supplierForm = new supplierForm();
-                                    supplierForm.Show();
-                                    break;
+                                    case "pegawai":
+                                        MessageBox.Show("Selamat datang, Pegawai!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        // Buka halaman Pegawai
+                                        pegawaiForm pegawaiForm = new pegawaiForm();
+                                        pegawaiForm.Show();
+                                        break;
 
-                                default:
-                                    MessageBox.Show("Role tidak dikenal!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    break;
+                                    case "supplier":
+                                        MessageBox.Show("Selamat datang, Supplier!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        // Buka halaman Supplier
+                                        supplierForm supplierForm = new supplierForm();
+                                        supplierForm.Show();
+                                        break;
+
+                                    default:
+                                        MessageBox.Show("Role tidak dikenal!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+
+                                }
+                            
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nama atau Password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                            {
+                                MessageBox.Show("Nama atau Password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
@@ -272,6 +275,11 @@ namespace project
         }
 
         private void SignUpgroupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
         {
 
         }

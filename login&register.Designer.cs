@@ -40,6 +40,9 @@
             this.comboBoxRole_SignUp = new System.Windows.Forms.ComboBox();
             this.Tlp_textBox = new System.Windows.Forms.TextBox();
             this.Email_SignUp_textBox = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.SignUpbutton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Password_SignUp_textBox = new System.Windows.Forms.TextBox();
@@ -50,36 +53,33 @@
             this.SignInbutton2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SignIngroupBox1 = new System.Windows.Forms.GroupBox();
-            this.SignUpgroupBox = new System.Windows.Forms.GroupBox();
-            this.Hello_SignUp_label = new System.Windows.Forms.Label();
-            this.SingnUp_button = new System.Windows.Forms.Button();
-            this.Enter_SignUp_label = new System.Windows.Forms.Label();
             this.SignIn_groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SignIn_label1 = new System.Windows.Forms.Label();
-            this.Name_SignIntextBox = new System.Windows.Forms.TextBox();
-            this.Password_SignIn_textBox = new System.Windows.Forms.TextBox();
-            this.Forget_Your_paasword_linkLabel = new System.Windows.Forms.LinkLabel();
-            this.Sign_In_button = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Sign_In_button = new System.Windows.Forms.Button();
+            this.Forget_Your_paasword_linkLabel = new System.Windows.Forms.LinkLabel();
+            this.Password_SignIn_textBox = new System.Windows.Forms.TextBox();
+            this.Name_SignIntextBox = new System.Windows.Forms.TextBox();
+            this.SignIn_label1 = new System.Windows.Forms.Label();
+            this.SignUpgroupBox = new System.Windows.Forms.GroupBox();
+            this.Enter_SignUp_label = new System.Windows.Forms.Label();
+            this.SingnUp_button = new System.Windows.Forms.Button();
+            this.Hello_SignUp_label = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SignUpgroupBox2.SuspendLayout();
             this.SignUpgroupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.SignIngroupBox1.SuspendLayout();
-            this.SignUpgroupBox.SuspendLayout();
-            this.SignIn_groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.SignIngroupBox1.SuspendLayout();
+            this.SignIn_groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SignUpgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +209,36 @@
             this.Email_SignUp_textBox.Text = "Email";
             this.Email_SignUp_textBox.TextChanged += new System.EventHandler(this.Email_SignUp_textBox_TextChanged);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(230, 49);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(72, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(152, 49);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(72, 50);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(74, 49);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(72, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 5;
+            this.pictureBox7.TabStop = false;
+            // 
             // SignUpbutton
             // 
             this.SignUpbutton.Location = new System.Drawing.Point(125, 373);
@@ -268,6 +298,7 @@
             this.groupBox4.Size = new System.Drawing.Size(376, 412);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // label2
             // 
@@ -311,48 +342,6 @@
             this.SignIngroupBox1.TabStop = false;
             this.SignIngroupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // SignUpgroupBox
-            // 
-            this.SignUpgroupBox.Controls.Add(this.Enter_SignUp_label);
-            this.SignUpgroupBox.Controls.Add(this.SingnUp_button);
-            this.SignUpgroupBox.Controls.Add(this.Hello_SignUp_label);
-            this.SignUpgroupBox.Location = new System.Drawing.Point(398, 25);
-            this.SignUpgroupBox.Name = "SignUpgroupBox";
-            this.SignUpgroupBox.Size = new System.Drawing.Size(376, 412);
-            this.SignUpgroupBox.TabIndex = 5;
-            this.SignUpgroupBox.TabStop = false;
-            // 
-            // Hello_SignUp_label
-            // 
-            this.Hello_SignUp_label.AutoSize = true;
-            this.Hello_SignUp_label.Location = new System.Drawing.Point(137, 157);
-            this.Hello_SignUp_label.Name = "Hello_SignUp_label";
-            this.Hello_SignUp_label.Size = new System.Drawing.Size(98, 20);
-            this.Hello_SignUp_label.TabIndex = 0;
-            this.Hello_SignUp_label.Text = "Hello, Friend";
-            this.Hello_SignUp_label.UseMnemonic = false;
-            // 
-            // SingnUp_button
-            // 
-            this.SingnUp_button.Location = new System.Drawing.Point(134, 264);
-            this.SingnUp_button.Name = "SingnUp_button";
-            this.SingnUp_button.Size = new System.Drawing.Size(94, 33);
-            this.SingnUp_button.TabIndex = 4;
-            this.SingnUp_button.Text = "Sign Up";
-            this.SingnUp_button.UseVisualStyleBackColor = true;
-            this.SingnUp_button.Click += new System.EventHandler(this.SingnUp_button_Click);
-            // 
-            // Enter_SignUp_label
-            // 
-            this.Enter_SignUp_label.AutoSize = true;
-            this.Enter_SignUp_label.Location = new System.Drawing.Point(40, 201);
-            this.Enter_SignUp_label.Name = "Enter_SignUp_label";
-            this.Enter_SignUp_label.Size = new System.Drawing.Size(281, 40);
-            this.Enter_SignUp_label.TabIndex = 5;
-            this.Enter_SignUp_label.Text = "Enter Your Personal Details And Start \r\nJournney With Us";
-            this.Enter_SignUp_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Enter_SignUp_label.UseMnemonic = false;
-            // 
             // SignIn_groupBox1
             // 
             this.SignIn_groupBox1.Controls.Add(this.pictureBox4);
@@ -368,90 +357,6 @@
             this.SignIn_groupBox1.Size = new System.Drawing.Size(376, 412);
             this.SignIn_groupBox1.TabIndex = 1;
             this.SignIn_groupBox1.TabStop = false;
-            // 
-            // SignIn_label1
-            // 
-            this.SignIn_label1.AutoSize = true;
-            this.SignIn_label1.Location = new System.Drawing.Point(146, 22);
-            this.SignIn_label1.Name = "SignIn_label1";
-            this.SignIn_label1.Size = new System.Drawing.Size(59, 20);
-            this.SignIn_label1.TabIndex = 0;
-            this.SignIn_label1.Text = "Sign In";
-            this.SignIn_label1.UseMnemonic = false;
-            // 
-            // Name_SignIntextBox
-            // 
-            this.Name_SignIntextBox.Location = new System.Drawing.Point(74, 180);
-            this.Name_SignIntextBox.Name = "Name_SignIntextBox";
-            this.Name_SignIntextBox.Size = new System.Drawing.Size(219, 26);
-            this.Name_SignIntextBox.TabIndex = 1;
-            this.Name_SignIntextBox.Text = "Name";
-            // 
-            // Password_SignIn_textBox
-            // 
-            this.Password_SignIn_textBox.Location = new System.Drawing.Point(74, 226);
-            this.Password_SignIn_textBox.Name = "Password_SignIn_textBox";
-            this.Password_SignIn_textBox.Size = new System.Drawing.Size(219, 26);
-            this.Password_SignIn_textBox.TabIndex = 2;
-            this.Password_SignIn_textBox.Text = "Password";
-            // 
-            // Forget_Your_paasword_linkLabel
-            // 
-            this.Forget_Your_paasword_linkLabel.AutoSize = true;
-            this.Forget_Your_paasword_linkLabel.Location = new System.Drawing.Point(97, 276);
-            this.Forget_Your_paasword_linkLabel.Name = "Forget_Your_paasword_linkLabel";
-            this.Forget_Your_paasword_linkLabel.Size = new System.Drawing.Size(167, 20);
-            this.Forget_Your_paasword_linkLabel.TabIndex = 3;
-            this.Forget_Your_paasword_linkLabel.TabStop = true;
-            this.Forget_Your_paasword_linkLabel.Text = "Forgot Your Password";
-            // 
-            // Sign_In_button
-            // 
-            this.Sign_In_button.Location = new System.Drawing.Point(130, 337);
-            this.Sign_In_button.Name = "Sign_In_button";
-            this.Sign_In_button.Size = new System.Drawing.Size(75, 33);
-            this.Sign_In_button.TabIndex = 4;
-            this.Sign_In_button.Text = "Sign In";
-            this.Sign_In_button.UseVisualStyleBackColor = true;
-            this.Sign_In_button.Click += new System.EventHandler(this.Sign_In_button_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(536, 277);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(796, 444);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(230, 49);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(72, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(152, 49);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(72, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(74, 49);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(72, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -483,6 +388,102 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // Sign_In_button
+            // 
+            this.Sign_In_button.Location = new System.Drawing.Point(130, 337);
+            this.Sign_In_button.Name = "Sign_In_button";
+            this.Sign_In_button.Size = new System.Drawing.Size(75, 33);
+            this.Sign_In_button.TabIndex = 4;
+            this.Sign_In_button.Text = "Sign In";
+            this.Sign_In_button.UseVisualStyleBackColor = true;
+            this.Sign_In_button.Click += new System.EventHandler(this.Sign_In_button_Click);
+            // 
+            // Forget_Your_paasword_linkLabel
+            // 
+            this.Forget_Your_paasword_linkLabel.AutoSize = true;
+            this.Forget_Your_paasword_linkLabel.Location = new System.Drawing.Point(97, 276);
+            this.Forget_Your_paasword_linkLabel.Name = "Forget_Your_paasword_linkLabel";
+            this.Forget_Your_paasword_linkLabel.Size = new System.Drawing.Size(167, 20);
+            this.Forget_Your_paasword_linkLabel.TabIndex = 3;
+            this.Forget_Your_paasword_linkLabel.TabStop = true;
+            this.Forget_Your_paasword_linkLabel.Text = "Forgot Your Password";
+            // 
+            // Password_SignIn_textBox
+            // 
+            this.Password_SignIn_textBox.Location = new System.Drawing.Point(74, 226);
+            this.Password_SignIn_textBox.Name = "Password_SignIn_textBox";
+            this.Password_SignIn_textBox.Size = new System.Drawing.Size(219, 26);
+            this.Password_SignIn_textBox.TabIndex = 2;
+            this.Password_SignIn_textBox.Text = "Password";
+            // 
+            // Name_SignIntextBox
+            // 
+            this.Name_SignIntextBox.Location = new System.Drawing.Point(74, 180);
+            this.Name_SignIntextBox.Name = "Name_SignIntextBox";
+            this.Name_SignIntextBox.Size = new System.Drawing.Size(219, 26);
+            this.Name_SignIntextBox.TabIndex = 1;
+            this.Name_SignIntextBox.Text = "Name";
+            // 
+            // SignIn_label1
+            // 
+            this.SignIn_label1.AutoSize = true;
+            this.SignIn_label1.Location = new System.Drawing.Point(146, 22);
+            this.SignIn_label1.Name = "SignIn_label1";
+            this.SignIn_label1.Size = new System.Drawing.Size(59, 20);
+            this.SignIn_label1.TabIndex = 0;
+            this.SignIn_label1.Text = "Sign In";
+            this.SignIn_label1.UseMnemonic = false;
+            // 
+            // SignUpgroupBox
+            // 
+            this.SignUpgroupBox.Controls.Add(this.Enter_SignUp_label);
+            this.SignUpgroupBox.Controls.Add(this.SingnUp_button);
+            this.SignUpgroupBox.Controls.Add(this.Hello_SignUp_label);
+            this.SignUpgroupBox.Location = new System.Drawing.Point(398, 25);
+            this.SignUpgroupBox.Name = "SignUpgroupBox";
+            this.SignUpgroupBox.Size = new System.Drawing.Size(376, 412);
+            this.SignUpgroupBox.TabIndex = 5;
+            this.SignUpgroupBox.TabStop = false;
+            // 
+            // Enter_SignUp_label
+            // 
+            this.Enter_SignUp_label.AutoSize = true;
+            this.Enter_SignUp_label.Location = new System.Drawing.Point(40, 201);
+            this.Enter_SignUp_label.Name = "Enter_SignUp_label";
+            this.Enter_SignUp_label.Size = new System.Drawing.Size(281, 40);
+            this.Enter_SignUp_label.TabIndex = 5;
+            this.Enter_SignUp_label.Text = "Enter Your Personal Details And Start \r\nJournney With Us";
+            this.Enter_SignUp_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Enter_SignUp_label.UseMnemonic = false;
+            // 
+            // SingnUp_button
+            // 
+            this.SingnUp_button.Location = new System.Drawing.Point(134, 264);
+            this.SingnUp_button.Name = "SingnUp_button";
+            this.SingnUp_button.Size = new System.Drawing.Size(94, 33);
+            this.SingnUp_button.TabIndex = 4;
+            this.SingnUp_button.Text = "Sign Up";
+            this.SingnUp_button.UseVisualStyleBackColor = true;
+            this.SingnUp_button.Click += new System.EventHandler(this.SingnUp_button_Click);
+            // 
+            // Hello_SignUp_label
+            // 
+            this.Hello_SignUp_label.AutoSize = true;
+            this.Hello_SignUp_label.Location = new System.Drawing.Point(137, 157);
+            this.Hello_SignUp_label.Name = "Hello_SignUp_label";
+            this.Hello_SignUp_label.Size = new System.Drawing.Size(98, 20);
+            this.Hello_SignUp_label.TabIndex = 0;
+            this.Hello_SignUp_label.Text = "Hello, Friend";
+            this.Hello_SignUp_label.UseMnemonic = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(536, 277);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(796, 444);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -508,19 +509,19 @@
             this.SignUpgroupBox2.ResumeLayout(false);
             this.SignUpgroupBox3.ResumeLayout(false);
             this.SignUpgroupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.SignIngroupBox1.ResumeLayout(false);
-            this.SignUpgroupBox.ResumeLayout(false);
-            this.SignUpgroupBox.PerformLayout();
-            this.SignIn_groupBox1.ResumeLayout(false);
-            this.SignIn_groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.SignIngroupBox1.ResumeLayout(false);
+            this.SignIn_groupBox1.ResumeLayout(false);
+            this.SignIn_groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.SignUpgroupBox.ResumeLayout(false);
+            this.SignUpgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
