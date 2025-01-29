@@ -25,6 +25,7 @@ namespace project
             comboBoxTaq.Items.Add("habis");
             comboBoxTaq.Items.Add("no taq");
         }
+        private int selectedIdCart; // Menyimpan id_cart yang dipilih
         private int selectedIdBarang; // Menyimpan Id_barang yang dipilih
         private string selectedNamaBarang;
         private decimal selectedHargaProduk;
@@ -188,6 +189,95 @@ namespace project
         }
 
         private void button_Hapus_Click(object sender, EventArgs e)
+        {
+            // Koneksi ke database
+            string connectionString = "server=localhost;user=root;password=;database=pad2024;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "UPDATE cart_kasir SET hapus_pilihan = 'iya' WHERE id_cart = @id_cart";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        // Menambahkan parameter
+                        cmd.Parameters.AddWithValue("@id_cart", selectedIdCart);
+
+                        // Eksekusi perintah
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Data berhasil dihapus dari pilihan.");
+                            // Anda mungkin ingin memuat ulang DataGridView setelah penghapusan
+                            LoadData(); // Pastikan Anda memiliki metode ini untuk memuat ulang data
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tidak ada data yang dihapus.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Pastikan sel yang diklik adalah sel data (bukan header)
+            if (e.RowIndex >= 0)
+            {
+                // Ambil id_cart dari baris yang dipilih
+                selectedIdCart = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_cart"].Value);
+            }
+        }
+
+        private void buttonCheckout_Click(object sender, EventArgs e)
+        {
+            Checkout co = new Checkout();
+            co.Show();
+        }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            // Mengubah nilai update_pilihan menjadi 'iya'
+            string updatePilihan = "iya";
+
+            // Mengambil nilai dari numericUpDown1 untuk jumlah_produk_update
+            int jumlahProdukUpdate = (int)numericUpDown1.Value;
+
+            // Panggil metode untuk melakukan update ke database
+            UpdateDatabase(updatePilihan, jumlahProdukUpdate, selectedIdCart);
+        }
+        private void UpdateDatabase(string updatePilihan, int jumlahProdukUpdate, int rowId)
+        {
+            // Logika untuk melakukan update ke database
+            // Misalnya menggunakan ADO.NET atau ORM seperti Entity Framework
+
+            // Contoh query SQL (pastikan untuk menggunakan parameter untuk menghindari SQL Injection)
+            string query = "UPDATE cart_kasir SET update_pilihan = @updatePilihan, jumlah_produk_update = @jumlahProdukUpdate WHERE id = @rowId";
+            string connectionString = "server=localhost;user=root;password=;database=pad2024;";
+            using (SqlConnection connection = new SqlConnection("connectionString"))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@updatePilihan", updatePilihan);
+                    command.Parameters.AddWithValue("@jumlahProdukUpdate", jumlahProdukUpdate);
+                    command.Parameters.AddWithValue("@rowId", rowId); // Menggunakan ID baris yang dipilih
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            // Tampilkan pesan sukses atau lakukan tindakan lain setelah update
+            MessageBox.Show("Data berhasil diupdate.");
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

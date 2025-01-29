@@ -171,8 +171,7 @@ namespace project
                                     case "admin":
                                         MessageBox.Show("Selamat datang, Admin!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         // Buka halaman Admin
-                                        adminForm adminForm = new adminForm();
-                                        adminForm.Show();
+                                        
                                         break;
 
                                     case "kasir":
