@@ -58,20 +58,20 @@
             this.checkoutUserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1613, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1613, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // kasirToolStripMenuItem
             // 
             this.kasirToolStripMenuItem.Name = "kasirToolStripMenuItem";
-            this.kasirToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.kasirToolStripMenuItem.Size = new System.Drawing.Size(65, 30);
             this.kasirToolStripMenuItem.Text = "Kasir";
             // 
             // checkoutUserToolStripMenuItem
             // 
             this.checkoutUserToolStripMenuItem.Name = "checkoutUserToolStripMenuItem";
-            this.checkoutUserToolStripMenuItem.Size = new System.Drawing.Size(142, 29);
+            this.checkoutUserToolStripMenuItem.Size = new System.Drawing.Size(142, 30);
             this.checkoutUserToolStripMenuItem.Text = "Checkout User";
             // 
             // groupBoxKasir
@@ -134,6 +134,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(764, 218);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonTambah
             // 
