@@ -20,6 +20,7 @@ namespace project
 {
     public partial class supplierForm : Form
     {
+      
         public supplierForm()
         {
             InitializeComponent();
@@ -494,6 +495,11 @@ namespace project
         }
 
         private void numericUpDownJumlahProduk_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox_TambahProduk_Enter(object sender, EventArgs e)
         {
 
         }

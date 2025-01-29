@@ -32,6 +32,9 @@
             this.kasirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkoutUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxKasir = new System.Windows.Forms.GroupBox();
+            this.comboBoxTaq = new System.Windows.Forms.ComboBox();
+            this.textBox_Search = new System.Windows.Forms.TextBox();
+            this.buttonCheckout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button_Hapus = new System.Windows.Forms.Button();
@@ -41,7 +44,6 @@
             this.label = new System.Windows.Forms.Label();
             this.numericUpDown_Jumlah_Produk = new System.Windows.Forms.NumericUpDown();
             this.dataGridViewKasir = new System.Windows.Forms.DataGridView();
-            this.buttonCheckout = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBoxKasir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -77,6 +79,8 @@
             // 
             // groupBoxKasir
             // 
+            this.groupBoxKasir.Controls.Add(this.comboBoxTaq);
+            this.groupBoxKasir.Controls.Add(this.textBox_Search);
             this.groupBoxKasir.Controls.Add(this.buttonCheckout);
             this.groupBoxKasir.Controls.Add(this.label1);
             this.groupBoxKasir.Controls.Add(this.numericUpDown1);
@@ -92,6 +96,34 @@
             this.groupBoxKasir.Size = new System.Drawing.Size(1589, 447);
             this.groupBoxKasir.TabIndex = 1;
             this.groupBoxKasir.TabStop = false;
+            // 
+            // comboBoxTaq
+            // 
+            this.comboBoxTaq.FormattingEnabled = true;
+            this.comboBoxTaq.Location = new System.Drawing.Point(255, 23);
+            this.comboBoxTaq.Name = "comboBoxTaq";
+            this.comboBoxTaq.Size = new System.Drawing.Size(159, 28);
+            this.comboBoxTaq.TabIndex = 11;
+            this.comboBoxTaq.Text = "Taq";
+            this.comboBoxTaq.SelectedIndexChanged += new System.EventHandler(this.comboBoxTaq_SelectedIndexChanged);
+            // 
+            // textBox_Search
+            // 
+            this.textBox_Search.Location = new System.Drawing.Point(6, 25);
+            this.textBox_Search.Name = "textBox_Search";
+            this.textBox_Search.Size = new System.Drawing.Size(243, 26);
+            this.textBox_Search.TabIndex = 10;
+            this.textBox_Search.Text = "Search";
+            this.textBox_Search.TextChanged += new System.EventHandler(this.textBox_Search_TextChanged);
+            // 
+            // buttonCheckout
+            // 
+            this.buttonCheckout.Location = new System.Drawing.Point(798, 380);
+            this.buttonCheckout.Name = "buttonCheckout";
+            this.buttonCheckout.Size = new System.Drawing.Size(127, 58);
+            this.buttonCheckout.TabIndex = 9;
+            this.buttonCheckout.Text = "Checkout";
+            this.buttonCheckout.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -117,6 +149,7 @@
             this.button_Hapus.TabIndex = 6;
             this.button_Hapus.Text = "Hapus";
             this.button_Hapus.UseVisualStyleBackColor = true;
+            this.button_Hapus.Click += new System.EventHandler(this.button_Hapus_Click);
             // 
             // button_Update
             // 
@@ -140,17 +173,18 @@
             // 
             // buttonTambah
             // 
-            this.buttonTambah.Location = new System.Drawing.Point(10, 301);
+            this.buttonTambah.Location = new System.Drawing.Point(6, 348);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(127, 58);
             this.buttonTambah.TabIndex = 3;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = true;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(6, 271);
+            this.label.Location = new System.Drawing.Point(2, 316);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(117, 20);
             this.label.TabIndex = 2;
@@ -158,7 +192,7 @@
             // 
             // numericUpDown_Jumlah_Produk
             // 
-            this.numericUpDown_Jumlah_Produk.Location = new System.Drawing.Point(129, 269);
+            this.numericUpDown_Jumlah_Produk.Location = new System.Drawing.Point(125, 316);
             this.numericUpDown_Jumlah_Produk.Name = "numericUpDown_Jumlah_Produk";
             this.numericUpDown_Jumlah_Produk.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown_Jumlah_Produk.TabIndex = 1;
@@ -167,7 +201,7 @@
             // dataGridViewKasir
             // 
             this.dataGridViewKasir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewKasir.Location = new System.Drawing.Point(6, 25);
+            this.dataGridViewKasir.Location = new System.Drawing.Point(0, 69);
             this.dataGridViewKasir.Name = "dataGridViewKasir";
             this.dataGridViewKasir.RowHeadersWidth = 62;
             this.dataGridViewKasir.RowTemplate.Height = 28;
@@ -175,15 +209,6 @@
             this.dataGridViewKasir.TabIndex = 0;
             this.dataGridViewKasir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKasir_CellClick);
             this.dataGridViewKasir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKasir_CellContentClick);
-            // 
-            // buttonCheckout
-            // 
-            this.buttonCheckout.Location = new System.Drawing.Point(798, 380);
-            this.buttonCheckout.Name = "buttonCheckout";
-            this.buttonCheckout.Size = new System.Drawing.Size(127, 58);
-            this.buttonCheckout.TabIndex = 9;
-            this.buttonCheckout.Text = "Checkout";
-            this.buttonCheckout.UseVisualStyleBackColor = true;
             // 
             // kasirForm
             // 
@@ -225,5 +250,7 @@
         private System.Windows.Forms.Button button_Hapus;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button buttonCheckout;
+        private System.Windows.Forms.TextBox textBox_Search;
+        private System.Windows.Forms.ComboBox comboBoxTaq;
     }
 }
