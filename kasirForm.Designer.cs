@@ -162,6 +162,7 @@
             this.numericUpDown_Jumlah_Produk.Name = "numericUpDown_Jumlah_Produk";
             this.numericUpDown_Jumlah_Produk.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown_Jumlah_Produk.TabIndex = 1;
+            this.numericUpDown_Jumlah_Produk.ValueChanged += new System.EventHandler(this.numericUpDown_Jumlah_Produk_ValueChanged);
             // 
             // dataGridViewKasir
             // 
@@ -172,6 +173,7 @@
             this.dataGridViewKasir.RowTemplate.Height = 28;
             this.dataGridViewKasir.Size = new System.Drawing.Size(764, 218);
             this.dataGridViewKasir.TabIndex = 0;
+            this.dataGridViewKasir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKasir_CellClick);
             this.dataGridViewKasir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKasir_CellContentClick);
             // 
             // buttonCheckout

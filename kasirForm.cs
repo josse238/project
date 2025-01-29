@@ -90,5 +90,23 @@ namespace project
         {
 
         }
+
+        private void numericUpDown_Jumlah_Produk_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewKasir_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Ambil jumlah produk dari kolom yang sesuai
+                int jumlahProduk = Convert.ToInt32(dataGridViewKasir.Rows[e.RowIndex].Cells["Jumlah_Produk"].Value);
+
+                // Atur nilai maksimum pada NumericUpDown
+                numericUpDown_Jumlah_Produk.Maximum = jumlahProduk;
+                numericUpDown_Jumlah_Produk.Value = 1; // Set nilai default jika diperlukan
+            }
+        }
     }
 }
