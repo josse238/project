@@ -32,6 +32,8 @@
             this.tambahProdukToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProdukToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_TambahProduk = new System.Windows.Forms.GroupBox();
+            this.label_JumlahProduk = new System.Windows.Forms.Label();
+            this.numericUpDownJumlahProduk = new System.Windows.Forms.NumericUpDown();
             this.button_TambahProduk = new System.Windows.Forms.Button();
             this.comboBox_Taq_TambahProduk = new System.Windows.Forms.ComboBox();
             this.textBox_Kategori_TambahProduk = new System.Windows.Forms.TextBox();
@@ -62,8 +64,13 @@
             this.label_HargaModal_EditProduk = new System.Windows.Forms.Label();
             this.numericUpDown_HargaModal_EditProduk = new System.Windows.Forms.NumericUpDown();
             this.dataGridView_EditProduk = new System.Windows.Forms.DataGridView();
+            this.textBox_Barcode = new System.Windows.Forms.TextBox();
+            this.textBoxBarcodeEdit = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown_JumlahProdukEdit = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.groupBox_TambahProduk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlahProduk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaDiskon_TambahProduk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaProduk_TambahProduk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHargaModal_TambahProduk)).BeginInit();
@@ -75,11 +82,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaProduk_EditProduk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaModal_EditProduk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_EditProduk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_JumlahProdukEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tambahProdukToolStripMenuItem,
@@ -106,6 +113,9 @@
             // 
             // groupBox_TambahProduk
             // 
+            this.groupBox_TambahProduk.Controls.Add(this.textBox_Barcode);
+            this.groupBox_TambahProduk.Controls.Add(this.label_JumlahProduk);
+            this.groupBox_TambahProduk.Controls.Add(this.numericUpDownJumlahProduk);
             this.groupBox_TambahProduk.Controls.Add(this.button_TambahProduk);
             this.groupBox_TambahProduk.Controls.Add(this.comboBox_Taq_TambahProduk);
             this.groupBox_TambahProduk.Controls.Add(this.textBox_Kategori_TambahProduk);
@@ -125,9 +135,26 @@
             this.groupBox_TambahProduk.TabIndex = 1;
             this.groupBox_TambahProduk.TabStop = false;
             // 
+            // label_JumlahProduk
+            // 
+            this.label_JumlahProduk.AutoSize = true;
+            this.label_JumlahProduk.Location = new System.Drawing.Point(13, 279);
+            this.label_JumlahProduk.Name = "label_JumlahProduk";
+            this.label_JumlahProduk.Size = new System.Drawing.Size(114, 20);
+            this.label_JumlahProduk.TabIndex = 15;
+            this.label_JumlahProduk.Text = "Jumlah Produk";
+            // 
+            // numericUpDownJumlahProduk
+            // 
+            this.numericUpDownJumlahProduk.Location = new System.Drawing.Point(133, 277);
+            this.numericUpDownJumlahProduk.Name = "numericUpDownJumlahProduk";
+            this.numericUpDownJumlahProduk.Size = new System.Drawing.Size(128, 26);
+            this.numericUpDownJumlahProduk.TabIndex = 14;
+            this.numericUpDownJumlahProduk.ValueChanged += new System.EventHandler(this.numericUpDownJumlahProduk_ValueChanged);
+            // 
             // button_TambahProduk
             // 
-            this.button_TambahProduk.Location = new System.Drawing.Point(-1, 336);
+            this.button_TambahProduk.Location = new System.Drawing.Point(-1, 358);
             this.button_TambahProduk.Name = "button_TambahProduk";
             this.button_TambahProduk.Size = new System.Drawing.Size(171, 38);
             this.button_TambahProduk.TabIndex = 13;
@@ -138,7 +165,7 @@
             // comboBox_Taq_TambahProduk
             // 
             this.comboBox_Taq_TambahProduk.FormattingEnabled = true;
-            this.comboBox_Taq_TambahProduk.Location = new System.Drawing.Point(0, 293);
+            this.comboBox_Taq_TambahProduk.Location = new System.Drawing.Point(10, 243);
             this.comboBox_Taq_TambahProduk.Name = "comboBox_Taq_TambahProduk";
             this.comboBox_Taq_TambahProduk.Size = new System.Drawing.Size(256, 28);
             this.comboBox_Taq_TambahProduk.TabIndex = 12;
@@ -147,7 +174,7 @@
             // 
             // textBox_Kategori_TambahProduk
             // 
-            this.textBox_Kategori_TambahProduk.Location = new System.Drawing.Point(0, 252);
+            this.textBox_Kategori_TambahProduk.Location = new System.Drawing.Point(10, 211);
             this.textBox_Kategori_TambahProduk.Name = "textBox_Kategori_TambahProduk";
             this.textBox_Kategori_TambahProduk.Size = new System.Drawing.Size(256, 26);
             this.textBox_Kategori_TambahProduk.TabIndex = 11;
@@ -156,7 +183,7 @@
             // 
             // numericUpDown_HargaDiskon_TambahProduk
             // 
-            this.numericUpDown_HargaDiskon_TambahProduk.Location = new System.Drawing.Point(133, 220);
+            this.numericUpDown_HargaDiskon_TambahProduk.Location = new System.Drawing.Point(133, 179);
             this.numericUpDown_HargaDiskon_TambahProduk.Name = "numericUpDown_HargaDiskon_TambahProduk";
             this.numericUpDown_HargaDiskon_TambahProduk.Size = new System.Drawing.Size(128, 26);
             this.numericUpDown_HargaDiskon_TambahProduk.TabIndex = 10;
@@ -165,7 +192,7 @@
             // label_HargaDiskon_TambahProduk
             // 
             this.label_HargaDiskon_TambahProduk.AutoSize = true;
-            this.label_HargaDiskon_TambahProduk.Location = new System.Drawing.Point(-4, 218);
+            this.label_HargaDiskon_TambahProduk.Location = new System.Drawing.Point(0, 179);
             this.label_HargaDiskon_TambahProduk.Name = "label_HargaDiskon_TambahProduk";
             this.label_HargaDiskon_TambahProduk.Size = new System.Drawing.Size(131, 20);
             this.label_HargaDiskon_TambahProduk.TabIndex = 9;
@@ -173,7 +200,7 @@
             // 
             // numericUpDown_HargaProduk_TambahProduk
             // 
-            this.numericUpDown_HargaProduk_TambahProduk.Location = new System.Drawing.Point(133, 188);
+            this.numericUpDown_HargaProduk_TambahProduk.Location = new System.Drawing.Point(133, 147);
             this.numericUpDown_HargaProduk_TambahProduk.Name = "numericUpDown_HargaProduk_TambahProduk";
             this.numericUpDown_HargaProduk_TambahProduk.Size = new System.Drawing.Size(128, 26);
             this.numericUpDown_HargaProduk_TambahProduk.TabIndex = 8;
@@ -182,7 +209,7 @@
             // labelHargaProduk_TambahProduk
             // 
             this.labelHargaProduk_TambahProduk.AutoSize = true;
-            this.labelHargaProduk_TambahProduk.Location = new System.Drawing.Point(-5, 188);
+            this.labelHargaProduk_TambahProduk.Location = new System.Drawing.Point(0, 149);
             this.labelHargaProduk_TambahProduk.Name = "labelHargaProduk_TambahProduk";
             this.labelHargaProduk_TambahProduk.Size = new System.Drawing.Size(132, 20);
             this.labelHargaProduk_TambahProduk.TabIndex = 6;
@@ -191,7 +218,7 @@
             // label_HargaModal_TambahProduk
             // 
             this.label_HargaModal_TambahProduk.AutoSize = true;
-            this.label_HargaModal_TambahProduk.Location = new System.Drawing.Point(2, 155);
+            this.label_HargaModal_TambahProduk.Location = new System.Drawing.Point(6, 117);
             this.label_HargaModal_TambahProduk.Name = "label_HargaModal_TambahProduk";
             this.label_HargaModal_TambahProduk.Size = new System.Drawing.Size(125, 20);
             this.label_HargaModal_TambahProduk.TabIndex = 5;
@@ -199,7 +226,7 @@
             // 
             // numericUpDownHargaModal_TambahProduk
             // 
-            this.numericUpDownHargaModal_TambahProduk.Location = new System.Drawing.Point(133, 155);
+            this.numericUpDownHargaModal_TambahProduk.Location = new System.Drawing.Point(134, 115);
             this.numericUpDownHargaModal_TambahProduk.Name = "numericUpDownHargaModal_TambahProduk";
             this.numericUpDownHargaModal_TambahProduk.Size = new System.Drawing.Size(128, 26);
             this.numericUpDownHargaModal_TambahProduk.TabIndex = 4;
@@ -207,7 +234,7 @@
             // 
             // textBox_Keterangan_TambahProduk
             // 
-            this.textBox_Keterangan_TambahProduk.Location = new System.Drawing.Point(6, 109);
+            this.textBox_Keterangan_TambahProduk.Location = new System.Drawing.Point(6, 83);
             this.textBox_Keterangan_TambahProduk.Name = "textBox_Keterangan_TambahProduk";
             this.textBox_Keterangan_TambahProduk.Size = new System.Drawing.Size(256, 26);
             this.textBox_Keterangan_TambahProduk.TabIndex = 3;
@@ -216,7 +243,7 @@
             // 
             // textBox_NamaBarang_TambahProduk
             // 
-            this.textBox_NamaBarang_TambahProduk.Location = new System.Drawing.Point(7, 66);
+            this.textBox_NamaBarang_TambahProduk.Location = new System.Drawing.Point(6, 51);
             this.textBox_NamaBarang_TambahProduk.Name = "textBox_NamaBarang_TambahProduk";
             this.textBox_NamaBarang_TambahProduk.Size = new System.Drawing.Size(256, 26);
             this.textBox_NamaBarang_TambahProduk.TabIndex = 2;
@@ -235,7 +262,7 @@
             // 
             // textBoxFotoProduk_TambahProduk
             // 
-            this.textBoxFotoProduk_TambahProduk.Location = new System.Drawing.Point(6, 25);
+            this.textBoxFotoProduk_TambahProduk.Location = new System.Drawing.Point(6, 19);
             this.textBoxFotoProduk_TambahProduk.Name = "textBoxFotoProduk_TambahProduk";
             this.textBoxFotoProduk_TambahProduk.Size = new System.Drawing.Size(256, 26);
             this.textBoxFotoProduk_TambahProduk.TabIndex = 0;
@@ -244,6 +271,9 @@
             // 
             // groupBox_EditProduk
             // 
+            this.groupBox_EditProduk.Controls.Add(this.numericUpDown_JumlahProdukEdit);
+            this.groupBox_EditProduk.Controls.Add(this.label1);
+            this.groupBox_EditProduk.Controls.Add(this.textBoxBarcodeEdit);
             this.groupBox_EditProduk.Controls.Add(this.dataGridView1);
             this.groupBox_EditProduk.Controls.Add(this.button_Update_EditProduk);
             this.groupBox_EditProduk.Controls.Add(this.button_Delete_EditProduk);
@@ -262,7 +292,7 @@
             this.groupBox_EditProduk.Controls.Add(this.dataGridView_EditProduk);
             this.groupBox_EditProduk.Location = new System.Drawing.Point(794, 42);
             this.groupBox_EditProduk.Name = "groupBox_EditProduk";
-            this.groupBox_EditProduk.Size = new System.Drawing.Size(777, 447);
+            this.groupBox_EditProduk.Size = new System.Drawing.Size(777, 474);
             this.groupBox_EditProduk.TabIndex = 14;
             this.groupBox_EditProduk.TabStop = false;
             this.groupBox_EditProduk.Enter += new System.EventHandler(this.groupBox_EditProduk_Enter);
@@ -280,7 +310,7 @@
             // 
             // button_Update_EditProduk
             // 
-            this.button_Update_EditProduk.Location = new System.Drawing.Point(600, 402);
+            this.button_Update_EditProduk.Location = new System.Drawing.Point(600, 436);
             this.button_Update_EditProduk.Name = "button_Update_EditProduk";
             this.button_Update_EditProduk.Size = new System.Drawing.Size(171, 38);
             this.button_Update_EditProduk.TabIndex = 14;
@@ -290,7 +320,7 @@
             // 
             // button_Delete_EditProduk
             // 
-            this.button_Delete_EditProduk.Location = new System.Drawing.Point(423, 402);
+            this.button_Delete_EditProduk.Location = new System.Drawing.Point(423, 436);
             this.button_Delete_EditProduk.Name = "button_Delete_EditProduk";
             this.button_Delete_EditProduk.Size = new System.Drawing.Size(171, 38);
             this.button_Delete_EditProduk.TabIndex = 14;
@@ -417,11 +447,43 @@
             this.dataGridView_EditProduk.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_EditProduk_CellClick);
             this.dataGridView_EditProduk.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_EditProduk_CellContentClick);
             // 
+            // textBox_Barcode
+            // 
+            this.textBox_Barcode.Location = new System.Drawing.Point(17, 309);
+            this.textBox_Barcode.Name = "textBox_Barcode";
+            this.textBox_Barcode.Size = new System.Drawing.Size(256, 26);
+            this.textBox_Barcode.TabIndex = 16;
+            this.textBox_Barcode.Text = "Barcode";
+            // 
+            // textBoxBarcodeEdit
+            // 
+            this.textBoxBarcodeEdit.Location = new System.Drawing.Point(6, 394);
+            this.textBoxBarcodeEdit.Name = "textBoxBarcodeEdit";
+            this.textBoxBarcodeEdit.Size = new System.Drawing.Size(256, 26);
+            this.textBoxBarcodeEdit.TabIndex = 21;
+            this.textBoxBarcodeEdit.Text = "Barcode";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(261, 400);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Jumlah Produk";
+            // 
+            // numericUpDown_JumlahProdukEdit
+            // 
+            this.numericUpDown_JumlahProdukEdit.Location = new System.Drawing.Point(381, 394);
+            this.numericUpDown_JumlahProdukEdit.Name = "numericUpDown_JumlahProdukEdit";
+            this.numericUpDown_JumlahProdukEdit.Size = new System.Drawing.Size(128, 26);
+            this.numericUpDown_JumlahProdukEdit.TabIndex = 17;
+            // 
             // supplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1578, 493);
+            this.ClientSize = new System.Drawing.Size(1578, 528);
             this.Controls.Add(this.groupBox_EditProduk);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox_TambahProduk);
@@ -433,6 +495,7 @@
             this.menuStrip1.PerformLayout();
             this.groupBox_TambahProduk.ResumeLayout(false);
             this.groupBox_TambahProduk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlahProduk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaDiskon_TambahProduk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaProduk_TambahProduk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHargaModal_TambahProduk)).EndInit();
@@ -445,6 +508,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaProduk_EditProduk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_HargaModal_EditProduk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_EditProduk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_JumlahProdukEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,5 +550,11 @@
         private System.Windows.Forms.Button button_Update_EditProduk;
         private System.Windows.Forms.Button button_Delete_EditProduk;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label_JumlahProduk;
+        private System.Windows.Forms.NumericUpDown numericUpDownJumlahProduk;
+        private System.Windows.Forms.TextBox textBox_Barcode;
+        private System.Windows.Forms.NumericUpDown numericUpDown_JumlahProdukEdit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxBarcodeEdit;
     }
 }

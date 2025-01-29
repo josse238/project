@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 
+
 namespace project
 {
     public partial class supplierForm : Form
@@ -482,6 +483,11 @@ namespace project
                 textBox_KategoriProduk_EditProduk.Text = selectedRow.Cells["Kategori"].Value?.ToString() ?? "";
                 comboBox_Taq_EditProduk.SelectedItem = selectedRow.Cells["Taq"].Value?.ToString();
             }
+        }
+
+        private void numericUpDownJumlahProduk_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
