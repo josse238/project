@@ -49,6 +49,8 @@ namespace project
             decimal hargaProduk = numericUpDown_HargaProduk_TambahProduk.Value;
             decimal hargaDiskon = numericUpDown_HargaDiskon_TambahProduk.Value;
             string kategori = textBox_Kategori_TambahProduk.Text;
+            int Jumlah_Produk = ((int)numericUpDownJumlahProduk.Value);
+            string Barcode = textBox_Barcode.Text;
             string taq = comboBox_Taq_TambahProduk.SelectedItem?.ToString(); // Nilai Taq
 
             // Validasi input
@@ -68,9 +70,9 @@ namespace project
 
                     // Query untuk menambahkan data
                     string query = @"INSERT INTO Barang 
-                            (Id_User, Foto_Produk, Nama_Barang, Keterangan, Harga_modal, Harga_produk, Harga_diskon, Kategori, Taq) 
+                            (Id_User, Foto_Produk, Nama_Barang, Keterangan, Harga_modal, Harga_produk, Harga_diskon, Kategori, Taq, Jumlah_Produk, Barcode) 
                             VALUES 
-                            (@Id_User, @Foto_Produk, @Nama_Barang, @Keterangan, @Harga_modal, @Harga_produk, @Harga_diskon, @Kategori, @Taq)";
+                            (@Id_User, @Foto_Produk, @Nama_Barang, @Keterangan, @Harga_modal, @Harga_produk, @Harga_diskon, @Kategori, @Taq, @Jumlah_Produk, @Barcode)";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
@@ -84,6 +86,8 @@ namespace project
                         cmd.Parameters.AddWithValue("@Harga_produk", hargaProduk);
                         cmd.Parameters.AddWithValue("@Harga_diskon", hargaDiskon);
                         cmd.Parameters.AddWithValue("@Kategori", kategori);
+                        cmd.Parameters.AddWithValue("@Jumlah_Produk", Jumlah_Produk);
+                        cmd.Parameters.AddWithValue("@Barcode", Barcode);
                         cmd.Parameters.AddWithValue("@Taq", string.IsNullOrWhiteSpace(taq) ? "no taq" : taq);
 
                         // Eksekusi query
