@@ -34,13 +34,14 @@
             this.groupBoxKasir = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Hapus = new System.Windows.Forms.Button();
+            this.button_Update = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.numericUpDown_Jumlah_Produk = new System.Windows.Forms.NumericUpDown();
             this.dataGridViewKasir = new System.Windows.Forms.DataGridView();
+            this.buttonCheckout = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBoxKasir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -58,28 +59,29 @@
             this.checkoutUserToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1613, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1613, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // kasirToolStripMenuItem
             // 
             this.kasirToolStripMenuItem.Name = "kasirToolStripMenuItem";
-            this.kasirToolStripMenuItem.Size = new System.Drawing.Size(65, 30);
+            this.kasirToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.kasirToolStripMenuItem.Text = "Kasir";
             // 
             // checkoutUserToolStripMenuItem
             // 
             this.checkoutUserToolStripMenuItem.Name = "checkoutUserToolStripMenuItem";
-            this.checkoutUserToolStripMenuItem.Size = new System.Drawing.Size(142, 30);
+            this.checkoutUserToolStripMenuItem.Size = new System.Drawing.Size(142, 29);
             this.checkoutUserToolStripMenuItem.Text = "Checkout User";
             // 
             // groupBoxKasir
             // 
+            this.groupBoxKasir.Controls.Add(this.buttonCheckout);
             this.groupBoxKasir.Controls.Add(this.label1);
             this.groupBoxKasir.Controls.Add(this.numericUpDown1);
-            this.groupBoxKasir.Controls.Add(this.button2);
-            this.groupBoxKasir.Controls.Add(this.button1);
+            this.groupBoxKasir.Controls.Add(this.button_Hapus);
+            this.groupBoxKasir.Controls.Add(this.button_Update);
             this.groupBoxKasir.Controls.Add(this.dataGridView1);
             this.groupBoxKasir.Controls.Add(this.buttonTambah);
             this.groupBoxKasir.Controls.Add(this.label);
@@ -87,14 +89,14 @@
             this.groupBoxKasir.Controls.Add(this.dataGridViewKasir);
             this.groupBoxKasir.Location = new System.Drawing.Point(12, 36);
             this.groupBoxKasir.Name = "groupBoxKasir";
-            this.groupBoxKasir.Size = new System.Drawing.Size(1589, 425);
+            this.groupBoxKasir.Size = new System.Drawing.Size(1589, 447);
             this.groupBoxKasir.TabIndex = 1;
             this.groupBoxKasir.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(931, 301);
+            this.label1.Location = new System.Drawing.Point(931, 335);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 8;
@@ -102,28 +104,28 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1054, 299);
+            this.numericUpDown1.Location = new System.Drawing.Point(1054, 333);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown1.TabIndex = 7;
             // 
-            // button2
+            // button_Hapus
             // 
-            this.button2.Location = new System.Drawing.Point(798, 252);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 58);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Hapus";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Hapus.Location = new System.Drawing.Point(798, 252);
+            this.button_Hapus.Name = "button_Hapus";
+            this.button_Hapus.Size = new System.Drawing.Size(127, 58);
+            this.button_Hapus.TabIndex = 6;
+            this.button_Hapus.Text = "Hapus";
+            this.button_Hapus.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_Update
             // 
-            this.button1.Location = new System.Drawing.Point(798, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 58);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Update.Location = new System.Drawing.Point(798, 316);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(127, 58);
+            this.button_Update.TabIndex = 5;
+            this.button_Update.Text = "Update";
+            this.button_Update.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -172,6 +174,15 @@
             this.dataGridViewKasir.TabIndex = 0;
             this.dataGridViewKasir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKasir_CellContentClick);
             // 
+            // buttonCheckout
+            // 
+            this.buttonCheckout.Location = new System.Drawing.Point(798, 380);
+            this.buttonCheckout.Name = "buttonCheckout";
+            this.buttonCheckout.Size = new System.Drawing.Size(127, 58);
+            this.buttonCheckout.TabIndex = 9;
+            this.buttonCheckout.Text = "Checkout";
+            this.buttonCheckout.UseVisualStyleBackColor = true;
+            // 
             // kasirForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -209,7 +220,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Hapus;
+        private System.Windows.Forms.Button button_Update;
+        private System.Windows.Forms.Button buttonCheckout;
     }
 }
