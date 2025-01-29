@@ -198,7 +198,7 @@ namespace project
         private void LoadDataBarang()
         {
             string connectionString = "server=localhost;user=root;password=;database=pad2024;";
-            string query = "SELECT Id_barang, Id_User, Foto_Produk, Nama_Barang, Keterangan, Harga_modal, Harga_produk, Harga_diskon, Kategori, Taq, created_at, updated_at " +
+            string query = "SELECT Id_barang, Id_User, Foto_Produk, Nama_Barang, Keterangan, Harga_modal, Harga_produk, Harga_diskon, Kategori, Taq, created_at, updated_at,  Jumlah_Produk, Barcode " +
                            "FROM Barang WHERE Id_User = @Id_User";
 
             try
@@ -245,6 +245,8 @@ namespace project
                 numericUpDown_HargaDiskon_EditProduk.Value = Convert.ToDecimal(selectedRow.Cells["Harga_diskon"].Value ?? 0);
                 textBox_KategoriProduk_EditProduk.Text = selectedRow.Cells["Kategori"].Value?.ToString() ?? "";
                 comboBox_Taq_EditProduk.SelectedItem = selectedRow.Cells["Taq"].Value?.ToString();
+                numericUpDown_JumlahProdukEdit.Value = Convert.ToDecimal(selectedRow.Cells["Jumlah_Produk"].Value ?? 0);
+                textBoxBarcodeEdit.Text = selectedRow.Cells["Barcode"].Value?.ToString() ?? "";
             }
         }
 
@@ -365,7 +367,7 @@ namespace project
             // Pastikan baris dipilih di DataGridView
             if (dataGridView_EditProduk.SelectedRows.Count > 0)
             {
-                
+
                 try
                 {
                     // Ambil baris yang dipilih
@@ -383,7 +385,7 @@ namespace project
                     decimal hargaDiskon = numericUpDown_HargaDiskon_EditProduk.Value;
                     string kategori = textBox_KategoriProduk_EditProduk.Text;
                     string taq = comboBox_Taq_EditProduk.SelectedItem?.ToString() ?? "no taq";
-                    
+
                     string connectionString = "server=localhost;user=root;password=;database=pad2024;";
                     // SQL untuk update data
                     string query = @"
@@ -486,6 +488,8 @@ namespace project
                 numericUpDown_HargaDiskon_EditProduk.Value = Convert.ToDecimal(selectedRow.Cells["Harga_diskon"].Value ?? 0);
                 textBox_KategoriProduk_EditProduk.Text = selectedRow.Cells["Kategori"].Value?.ToString() ?? "";
                 comboBox_Taq_EditProduk.SelectedItem = selectedRow.Cells["Taq"].Value?.ToString();
+                numericUpDown_JumlahProdukEdit.Value = Convert.ToDecimal(selectedRow.Cells["Jumlah_Produk"].Value ?? 0);
+                textBoxBarcodeEdit.Text = selectedRow.Cells["Barcode"].Value?.ToString() ?? "";
             }
         }
 
