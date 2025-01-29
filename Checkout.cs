@@ -65,5 +65,10 @@ namespace project
         {
 
         }
+
+        private void Checkout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

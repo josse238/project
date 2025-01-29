@@ -238,7 +238,7 @@ namespace project
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
             Checkout co = new Checkout();
-            co.Show();
+            co.ShowDialog();
         }
 
         private void button_Update_Click(object sender, EventArgs e)

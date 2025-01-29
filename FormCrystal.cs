@@ -23,5 +23,10 @@ namespace project
             repo.SetDatabaseLogon("root", "", "localhost", "pad2024");
             crystalReportViewer1.ReportSource = repo;
         }
+
+        private void FormCrystal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

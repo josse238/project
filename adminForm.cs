@@ -383,7 +383,7 @@ namespace project
         private void button1_Click(object sender, EventArgs e)
         {
             FormCrystal fc = new FormCrystal();
-            fc.Show();
+            fc.ShowDialog();
         }
     }
 }

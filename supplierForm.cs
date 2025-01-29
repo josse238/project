@@ -503,5 +503,11 @@ namespace project
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportProduk rc = new ReportProduk();
+            rc.ShowDialog();
+        }
     }
 }
