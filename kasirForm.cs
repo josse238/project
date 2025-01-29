@@ -18,18 +18,39 @@ namespace project
         {
             InitializeComponent();
             LoadDataBarang();
+            LoadData();
         }
-
+        private void LoadData()
+        {
+            string connectionString = "server=localhost;user=root;password=;database=pad2024;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM cart_kasir";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
         private void LoadDataBarang()
         {
             string connectionString = "server=localhost;user=root;password=;database=pad2024;";
-            string query = "SELECT Id_barang, Nama_Barang, Harga_produk, Harga_diskon, JumlahProduk, Taq FROM Barang";
+            
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
+                    string query = "SELECT Id_barang, Nama_Barang, Harga_produk, Harga_diskon, Jumlah_Produk, Taq FROM Barang";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                     {
@@ -44,7 +65,7 @@ namespace project
                         dataGridViewKasir.Columns["Nama_Barang"].HeaderText = "Nama Barang";
                         dataGridViewKasir.Columns["Harga_produk"].HeaderText = "Harga Produk";
                         dataGridViewKasir.Columns["Harga_diskon"].HeaderText = "Harga Diskon";
-                        dataGridViewKasir.Columns["JumlahProduk"].HeaderText = "Jumlah Produk";
+                        dataGridViewKasir.Columns["Jumlah_Produk"].HeaderText = "Jumlah Produk";
                         dataGridViewKasir.Columns["Taq"].HeaderText = "Taq";
                     }
                 }
